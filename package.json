@@ -1,0 +1,32 @@
+{
+  "name": "gh-pages-readme",
+  "version": "1.0.0",
+  "description": "Automatically generate GitHub pages from contents of README",
+  "main": "./lib/index.js",
+  "browser": "./lib/index.js",
+  "repository": "https://github.com/RauliL/gh-pages-readme.git",
+  "author": "Rauli Laine <rauli.laine@iki.fi>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "clean": "rimraf './lib'",
+    "prebuild": "yarn run clean",
+    "prepack": "yarn run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "bootstrap": "^4.5.3",
+    "css-loader": "^5.0.1",
+    "promise-polyfill": "^8.2.0",
+    "rimraf": "^3.0.2",
+    "showdown": "^1.9.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1",
+    "whatwg-fetch": "^3.5.0",
+    "yarn": "^1.22.10"
+  }
+}
