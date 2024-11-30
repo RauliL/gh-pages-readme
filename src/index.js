@@ -4,6 +4,7 @@ import 'promise-polyfill/src/polyfill';
 import 'whatwg-fetch';
 
 import showdown from 'showdown';
+import showdownHighlight from 'showdown-highlight';
 
 export const init = (repository, branch = 'main') => {
   const README_URL = `https://raw.githubusercontent.com/${repository}/${branch}/README.md`;
@@ -22,8 +23,11 @@ export const init = (repository, branch = 'main') => {
 
         containerElement.classList.add('container');
         containerElement.innerHTML = new showdown.Converter({
+          emoji: true,
+          extensions: [showdownHighlight()],
           ghCodeBlocks: true,
-          ghCompatibleHeaderId: true
+          ghCompatibleHeaderId: true,
+          ghMentions: true
         }).makeHtml(content);
         document.body.appendChild(containerElement);
       })
