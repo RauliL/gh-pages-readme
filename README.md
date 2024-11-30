@@ -12,7 +12,8 @@ Create branch called `gh-pages` in your repository, add file `index.html`
 with following contents, then commit and push your changes:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/gh-pages-readme@1.0.0/lib/index.js"></script>
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/gh-pages-readme@2.0.0/lib/index.js"></script>
 <script>
   ghpages.init('user/repository');
 </script>
