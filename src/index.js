@@ -21,15 +21,29 @@ export const init = (repository, branch = 'main') => {
       .then(content => {
         const containerElement = document.createElement('div');
 
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+        }
         containerElement.classList.add('container');
         containerElement.innerHTML = new showdown.Converter({
           emoji: true,
-          extensions: [showdownHighlight()],
+          extensions: [showdownHighlight],
           ghCodeBlocks: true,
           ghCompatibleHeaderId: true,
           ghMentions: true
         }).makeHtml(content);
         document.body.appendChild(containerElement);
+
+        if (!document.querySelector('title')) {
+          const firstHeader = containerElement.querySelector('h1');
+
+          if (firstHeader) {
+            const title = document.createElement('title');
+
+            title.textContent = firstHeader.textContent;
+            document.body.appendChild(title);
+          }
+        }
       })
       .catch(() => {
         const errorMessageElement = document.createElement('p');
