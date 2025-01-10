@@ -13,7 +13,7 @@ with following contents, then commit and push your changes:
 
 ```html
 <!DOCTYPE html>
-<script src="https://cdn.jsdelivr.net/npm/gh-pages-readme@2.0.0/lib/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gh-pages-readme@latest/lib/index.js"></script>
 <script>
   ghpages.init('user/repository');
 </script>
