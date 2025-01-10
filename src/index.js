@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import 'highlight.js/styles/github-dark.css';
 
 import 'promise-polyfill/src/polyfill';
 import 'whatwg-fetch';

@@ -1,6 +1,6 @@
 {
   "name": "gh-pages-readme",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Automatically generate GitHub pages from contents of README",
   "main": "./lib/index.js",
   "browser": "./lib/index.js",
